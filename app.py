@@ -6,7 +6,7 @@ import os
 # Fetch the API key securely
 # If running locally, use environment variables or a .env file.
 # If deployed on Streamlit Cloud, use secrets manager.
-openai.api_key = os.getenv("OPENAI_API_KEY", st.secrets.get("OPENAI_API_KEY"))
+openai.api_key = st.secrets["OPENAI_API_KEY"]
 
 # Ensure the feedback file exists
 if not os.path.exists("feedback.csv"):
